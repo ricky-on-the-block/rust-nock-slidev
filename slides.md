@@ -54,7 +54,7 @@ src: ./pages/2b-nock.md
 layout: section
 ---
 
-# 🛠️ Technical Implementation
+# 🛠️ Technical Implementation in Rust
 
 
 

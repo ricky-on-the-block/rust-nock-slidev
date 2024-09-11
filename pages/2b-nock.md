@@ -321,20 +321,14 @@ hax:   #[1 a b]            =>  a                               // Edit at addres
 
 # Nock: What About Performance?
 
-<v-click>
-
 Here are our operators:
-</v-click>
 
-<v-clicks>
-
-1. `?` - "wut" - This is the cell test operator.
-2. `+` - "lus" - This is the increment operator.
-3. `=` - "tis" - This is the equality test operator.
-4. `/` - "fas" - This is the slot (address) operator.
-5. `#` - "hax" - This is the edit operator.
-6. `*` - "tar" - This is the Nock evaluation operator.
-</v-clicks>
+1. `*` - "tar" - This is the Nock evaluation operator.
+2. `?` - "wut" - This is the cell test operator.
+3. `+` - "lus" - This is the increment operator.
+4. `=` - "tis" - This is the equality test operator.
+5. `/` - "fas" - This is the slot (address) operator.
+6. `#` - "hax" - This is the edit operator. 
 
 <v-click>
 
@@ -372,7 +366,7 @@ How Jets Work
 <v-clicks>
 
 - Jets provide identical results to their Nock counterparts but execute much faster
-- The Nock interpreter can dynamically replace slow Nock code with equivalent jet code
+- The Nock runtime can dynamically replace slow Nock code with equivalent jet code
 </v-clicks>
 
 ---
@@ -387,34 +381,41 @@ How Jets Work
 4. The runtime automatically uses the jet when the corresponding Nock code is encountered
 </v-clicks>
 
----
-
-# Nock: Making A Jet
-
-Nock code for increment: `[6 [5 [0 7] [0 6]] [0 6] 0 2]`
-
 <v-click>
 
-Jet implementation in C:
-```c
-u3_noun u3qa_add(u3_atom a, u3_atom b) {
-  if (_(u3a_is_cat(a)) && _(u3a_is_cat(b))) {
-    c3_d c = ((c3_d) a) + ((c3_d) b);
-    return u3i_words(1, &c);
-  }
-  else {
-    mpz_t a_mp, b_mp, c_mp;
-
-    u3r_mp(a_mp, a);
-    u3r_mp(b_mp, b);
-    mpz_init(c_mp);
-    
-    mpz_add(c_mp, a_mp, b_mp);
-
-    return u3i_mp(c_mp);
-  }
-}
-```
+How is this safe, pure, functional?
 </v-click>
 
-This jet drastically improves performance for the common operation of incrementing a number.
+<v-clicks>
+
+- Semantic Equivalence: Jets must produce exactly the same results as their Nock counterparts for all possible inputs.
+- Transparent Optimization: The use of a jet is an implementation detail invisible to the Nock program.
+- Fallback Mechanism: If a jet fails or is unavailable, the system can always fall back to the pure Nock implementation.
+- No Side Effects: Jets are not allowed to have side effects that would be visible to the Nock program.
+</v-clicks>
+
+---
+
+# Nock: Example Jet (Decrement)
+
+Nock: `[8 [1 0] 8 [1 6 [5 [0 7] 4 0 6] [0 6] 9 2 [0 2] [4 0 6] 0 7] 9 2 0 1]`
+
+<v-clicks>
+
+Jet implementation in C:
+
+```c
+u3_noun u3qa_dec(u3_atom a) {
+  /// ... prev code for error checking
+  mpz_t a_mp;
+
+  u3r_mp(a_mp, a);
+  mpz_sub_ui(a_mp, a_mp, 1);
+
+  return u3i_mp(a_mp);
+}
+```
+
+
+This jet drastically improves performance for the common operation of decrementing a number.
+</v-clicks>

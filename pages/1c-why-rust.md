@@ -8,10 +8,7 @@ class: text-center
 ---
 layout: two-cols
 ---
-<v-click>
-
 # Rust Advantages
-</v-click>
 
 <v-clicks>
 
