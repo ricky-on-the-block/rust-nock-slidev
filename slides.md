@@ -49,7 +49,6 @@ src: ./pages/2b-nock.md
 
 
 
-
 ---
 layout: section
 ---
@@ -60,13 +59,17 @@ layout: section
 src: ./pages/3a-rust-nock-noun.md
 ---
 
+---
+src: ./pages/3b-rust-tdd.md
+---
 
 ---
-layout: section
+src: ./pages/3c-rust-impl.md
 ---
 
-# ⚖️ Rust vs C/C++ for Nock Implementation
-
+---
+src: ./pages/3d-rust-benchmark.md
+---
 
 
 
@@ -76,6 +79,9 @@ layout: section
 
 # 📊 Results and Analysis
 
+---
+src: ./pages/4a-results-and-metrics.md
+---
 
 
 
@@ -84,3 +90,15 @@ layout: section
 ---
 
 # 🚀 Future Work and Conclusion
+
+---
+src: ./pages/5a-future-work.md
+---
+
+---
+src: ./pages/5b-future-of-urbit.md
+---
+
+---
+src: ./pages/5c-conclusion.md
+---

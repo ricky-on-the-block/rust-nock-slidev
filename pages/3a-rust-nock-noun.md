@@ -113,7 +113,7 @@ let complex_noun = Noun::Cell(
 
 ---
 
-# Rust: What Is Different About Macros?
+# Rust: Introducing Macros
 
 ```rs
 let complex_noun = Noun::Cell(
@@ -332,6 +332,6 @@ let complex_noun = noun![42 [23 [7 5]]];
 
 <v-click>
 
-And now that creating nouns is a lot easier, let's see how to perform TDD in Rust.
+Now that creating nouns is a lot easier, let's circle back on those Nock operators...
 
 </v-click>
