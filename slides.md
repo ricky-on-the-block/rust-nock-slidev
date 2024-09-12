@@ -56,7 +56,9 @@ layout: section
 
 # 🛠️ Technical Implementation in Rust
 
-
+---
+src: ./pages/3a-rust-nock-noun.md
+---
 
 
 ---
